@@ -15,5 +15,14 @@ Hiiii i selected all the components that i would need to make this project and a
 <img width="944" height="417" alt="image" src="https://github.com/user-attachments/assets/1067c07e-edc2-40f2-a181-32048298ccfc" />
 <img width="998" height="565" alt="image" src="https://github.com/user-attachments/assets/92946ca5-2e18-4965-a8a0-5ba1429d40df" />
 
-
 **Total time spent: 1h 27mins**
+
+## Oct 21 2026 - 10:00am: <PCB>
+i used the xiao rp2040 symbol first but then i realised it didnt have a lot of pins like battery and stuff so i went to seeed studio's website to download the esp32 c6 symbol and footprint . then i realised i would not be able to solder the LIS3DH's pins so im using a breakout board for it and i changed the resistor from THT to SMD 
+Sooo i made a few changes to the cart <img width="1068" height="596" alt="image" src="https://github.com/user-attachments/assets/ee700df9-833f-403c-b9ac-7092e096dc68" />
+<img width="1323" height="596" alt="image" src="https://github.com/user-attachments/assets/d8d32a2d-7639-4a25-8c3e-88f7f7d1d3bb" />
+Finished the Schematic and added the footprints to it <img width="690" height="246" alt="image" src="https://github.com/user-attachments/assets/ced60c6a-80eb-4eb9-a120-20007bf285f3" /><img width="946" height="561" alt="image" src="https://github.com/user-attachments/assets/1fff7a8c-34e5-4ca6-9460-1418e25e3e6e" />
+finding the right components and its footprint it super hard
+NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOooooooo the finished pcb (it was almost done i even added the 3d step of display and esp32 and aligned them ) it was few mins away from being finished , i didnt even get a "Kicad not responding" it just randomly closed and the restore backup folde has only schematic WHICH I ALREADY SAVED :/ ill do it again after lunch 
+
+**Total time spent : 4hrs 35mins**
