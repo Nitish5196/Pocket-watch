@@ -3200,7 +3200,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 87.63 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -3280,7 +3280,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical"
 			(at 173.99 73.66 0)
 			(hide yes)
 			(show_name no)
@@ -3375,7 +3375,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 179.07 92.71 0)
 			(hide yes)
 			(show_name no)
@@ -3761,7 +3761,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical"
 			(at 153.67 31.75 0)
 			(hide yes)
 			(show_name no)
@@ -3919,7 +3919,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline"
 			(at 156.21 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -4102,7 +4102,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_SMD:SW_DPDT_CK_JS202011JCQN"
 			(at 137.16 33.02 0)
 			(hide yes)
 			(show_name no)
@@ -4262,7 +4262,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal"
 			(at 166.37 91.44 0)
 			(hide yes)
 			(show_name no)
@@ -4444,7 +4444,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 151.892 80.01 90)
 			(hide yes)
 			(show_name no)
@@ -4679,7 +4679,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x05_P2.54mm_Vertical"
 			(at 170.18 55.88 0)
 			(hide yes)
 			(show_name no)
