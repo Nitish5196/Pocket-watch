@@ -29,11 +29,15 @@ NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
 
 ## Oct 21 2026 - 3:10pm: <PCB completed>
 So i updated the pcb from schematic , created a 44mm diameter circular edge cuts , routed the components and added GND pour on the B.Cu and completed the schematic with ZERO DRC errors😼
+
 <img width="444" height="447" alt="image" src="https://github.com/user-attachments/assets/e962f73a-a68c-4c1b-98f0-7f0845793d8a" />
+
 <img width="644" height="485" alt="image" src="https://github.com/user-attachments/assets/a8818289-abfb-4102-8180-3033a7b5d761" />
 
  i also added the 3d steo of esp32, display and the switch. , thts ot the PCB IS DONE!! i might use  jumper cables/normal copper cables  to solder the pcb and the accelerometer
+ 
  <img width="468" height="407" alt="image" src="https://github.com/user-attachments/assets/0800401b-1875-445e-932d-210f026a2259" />
+
 <img width="586" height="457" alt="image" src="https://github.com/user-attachments/assets/422b19bd-4224-4562-a846-f0f3ab66c404" />
 
 Now we need to work on the firmware and case
