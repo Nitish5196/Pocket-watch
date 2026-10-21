@@ -1,7 +1,7 @@
 ---
-title: "Your Project Name"
-github: "your repo"
-description: "Describe your project in a short sentence!"
+title: "KN-Pocket watch"
+github: "https://github.com/Nitish5196/Pocket-watch"
+description: "hii Kn-Pocket watch is a compact pocket watch which displays the time the class you have to attend/remeinders it has a deep sleep mode and you have to shake it to wake it up. it also has a vibrating motor to alert you when its time to do smth"
 created_at: "2026-10-21"
 total_time: "TBD"
 ---
