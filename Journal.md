@@ -43,3 +43,17 @@ So i updated the pcb from schematic , created a 44mm diameter circular edge cuts
 Now we need to work on the firmware and case
 
 **Total time spent :1hour**
+
+## Oct 27 2026 <Case almost done>
+Hiiii so i have been working on the case for the past week but i didnt track time properly but this is how it looks now <img width="396" height="385" alt="image" src="https://github.com/user-attachments/assets/933bc65c-1976-4572-981a-fcbf66eedb1b" />
+<img width="880" height="458" alt="image" src="https://github.com/user-attachments/assets/8f01f265-8b46-4f23-aad6-ce76d40a9517" />
+<img width="426" height="391" alt="image" src="https://github.com/user-attachments/assets/8b1b13c0-01b8-462e-b027-f1bcbbdcaa29" />
+<img width="574" height="430" alt="image" src="https://github.com/user-attachments/assets/342facb2-139c-4ade-97a5-61803e2e599d" />
+<img width="562" height="443" alt="image" src="https://github.com/user-attachments/assets/c4e6ee1d-e21d-45e8-ac99-7bc4db8a744c" />
+
+i added 4 holes to add magnets to the lid and bottom case i MIGHT add hinges to them later , the usb port is accessible and i made the whole case in a round shape .rn it looks a bit ugly tbh but its alright cause this is just a rough case to get this submitted , the website of the components doest have the exact measurement so ill make changes to this case once i get the components and pcb to ensure the watch fits perfectly in its case . this is how the case looks as of now
+### so whts left?
+- need to add mounting holes to the pcb and supports for it in the case
+- need to write a rough firmware for it AND IT WILL BE DONEEEEEEEEEEEEEE
+
+** Time Spent : 3h **
