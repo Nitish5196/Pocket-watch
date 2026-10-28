@@ -56,4 +56,27 @@ i added 4 holes to add magnets to the lid and bottom case i MIGHT add hinges to 
 - need to add mounting holes to the pcb and supports for it in the case
 - need to write a rough firmware for it AND IT WILL BE DONEEEEEEEEEEEEEE
 
-** Time Spent : 3h **
+**Time Spent : 3h**
+
+## Oct 28 2026 <finish cad?>
+so i added 3.2mm mounting hole under the display , i added only 1 because there is no space on the pcb . this is how it looks <img width="559" height="515" alt="image" src="https://github.com/user-attachments/assets/ab2c32c5-a68f-4bf3-8a98-87dac2933e73" />
+<img width="769" height="608" alt="image" src="https://github.com/user-attachments/assets/414b5d0d-4c08-465e-8b5a-2a693a5533c2" />
+
+##BTW these are the cases i made for this pocket watch
+
+V1 <img width="424" height="270" alt="image" src="https://github.com/user-attachments/assets/152d8692-e298-4fbd-af51-f95ad2a0eabb" />
+V2 <img width="407" height="158" alt="image" src="https://github.com/user-attachments/assets/56dce81d-451a-444c-a253-782bdfdf51c1" />
+V3(final ver)<img width="481" height="399" alt="image" src="https://github.com/user-attachments/assets/419c8494-4346-4ea2-b500-836f233a7f02" />
+Added support for the mounting hole <img width="611" height="459" alt="image" src="https://github.com/user-attachments/assets/72478c4e-7718-40e9-b621-4d92db4f31e9" />
+added hole for switch ( idk how to extrude the object but somehow learned it , i didnt know in a assembly design everytime i created a new component its a new part design , i was tryin to extrude in another part design .dumb me lol)<img width="578" height="553" alt="image" src="https://github.com/user-attachments/assets/56c97eda-0ea5-45f8-a931-927285789e32" />
+i added key hole to the case so i can attach a keyring to it later if needed
+<img width="403" height="379" alt="image" src="https://github.com/user-attachments/assets/fed04064-6517-4f36-8eb1-0801f9d893eb" />
+<img width="427" height="322" alt="image" src="https://github.com/user-attachments/assets/f5d9a0d3-dde4-41b6-8b0e-f5e148f1caac" />
+<img width="494" height="381" alt="image" src="https://github.com/user-attachments/assets/52219799-5c62-4759-8c8b-014df54809a9" />
+
+### CASE IS DONE LETS GOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO
+ill work on firmware tmrw 
+
+**Time Spent : 1hr**
+
+
