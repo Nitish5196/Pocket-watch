@@ -82,7 +82,7 @@ ill work on firmware tmrw cause i spent more than 1hr to download the libraries 
 
 
 **Time Spent : 1hr**
-## 30-10-2026 
+## Oct 30 2026 <firmware stuff>
 i'm not able to download any libraries cause its takin too long and slowing my potato laptop so ill install them laer when im free , rn im facing another problem , Displaying the time table . my school follows Day order Timetable so i cant use "if monday -display this" cause day orders may fall on any day of the week and i get a lot of holidays so i need to connect this to my phone to skip the day order and mark it as holiday so it gets display the next working day ( this could be solved by adding a small push button but accidental push may cause it to get changed and im lazy to change my pcb and case cause I NEED TO FINISH THIS ASAP )
 ###So im planning to make a simple webpage to control the day order on the watch like everyday i wake up and choose the day order on my phone before heading to school.
 ### Here is the logic for the code below :
@@ -91,7 +91,7 @@ i'm not able to download any libraries cause its takin too long and slowing my p
 - During the school hrs i would be able to shake the watch to make it display the current time ,subject and when it starts/ends 
 - at 3pm school ends so the watch enters deep sleep mode at 4pm and wont turn on until you shake it Very aggressively and the internal , it will automatically turn on and display the webpage at 6:20am and syncs to know the current day order
 
-## so whats left? <hmm>
+### so whats left?
 - finish the code
 - make a simple webpage with html and js for now
 ## finished the code <done yay>
