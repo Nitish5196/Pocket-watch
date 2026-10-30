@@ -34,6 +34,7 @@ once you enter tht , it will show the tabular form of the time table of the day 
 | HEAVENGLOW Qi Wireless Micro USB Charging Receiver Module | 1 | $5.97 | Amazon | [link](https://www.amazon.in/gp/product/B0FN4J4VNT/ref=ox_sc_act_title_1?smid=A2AL6IVND0I91F&psc=1) |
 | 3.7V 300mAh LiPo Battery | 1  | $3.8 | Amazon | [link](https://www.amazon.in/gp/product/B0DY89KG26/ref=ox_sc_saved_image_2?smid=AJ6SIZC8YQDZX&psc=1) |
 | 5V 2A Wireless Charging Transmitter| 1 | $6.63 | Robu | [Robu link](https://robu.in/product/5v-2a-large-current-wireless-charger-module-transmitter-receiver-charging-coil-module/) |
+| Power/kill Switch | 1 | $0.2 | robu | [link](https://robu.in/product-category/slide-switches/)| 
 | Custom PCB | 1 | $13.00 | Lion Circuits | [link](https://www.lioncircuits.com/quote) |
 | 3d Case | 2 | $10 | Printing legion  | [join Hack Club!!](https://printlegion.hackclub.com/)|
 | **TOTAL** | | **$55.83** | | |
