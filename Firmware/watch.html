@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pocket Watch Timetable</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #000000; 
+            color: #ffffff; 
+            text-align: center; 
+            padding: 15px; 
+        }
+        .card { 
+            background: #000000; 
+            border: 1px solid #ffffff; 
+            padding: 15px; 
+            border-radius: 10px; 
+            max-width: 450px; 
+            margin: auto; 
+        }
+        h2 { 
+            color: #ffffff; 
+            font-size: 18px; 
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 10px; 
+            font-size: 12px; 
+        }
+        th, td { 
+            border: 1px solid #ffffff; 
+            padding: 6px; 
+            text-align: center; 
+        }
+        th { 
+            background: #ffffff; 
+            color: #000000; 
+        }
+        tr:nth-child(even) { 
+            background: #111111; 
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2 id="DOD">Loading Timetable...</h2>
+    <div id="tableContainer"></div>
+</div>
+
+<script>
+    let userInput = prompt("Enter Day Order (1-6) or 0 for Holiday:");
+    let Day_order = Number(userInput);
+
+    function generateTimetable(day) {
+        let titleElem = document.getElementById("DOD");
+        let container = document.getElementById("tableContainer");
+
+        if (day === 0) {
+            titleElem.innerHTML = "Holiday Today!";
+            container.innerHTML = "<p>No classes scheduled.</p>";
+            return;
+        }
+
+        titleElem.innerHTML = "Day Order " + day + " Timetable";
+
+        let times = [
+            "08:00 - 09:00", "09:00 - 09:45", "09:45 - 10:00", 
+            "10:00 - 10:45", "10:45 - 11:30", "11:30 - 12:15", 
+            "12:15 - 01:00", "01:00 - 01:40", "01:40 - 02:20", "02:20 - 03:00"
+        ];
+        let periods = [
+            "Period 1", "Period 2", "Break", 
+            "Period 3", "Period 4", "Period 5", 
+            "Lunch", "Period 6", "Period 7", "Period 8"
+        ];
+
+        let subjects = [];
+
+        if (day === 1) {
+            subjects = ["PHY", "Chem", "Break", "Eng", "CSC", "Chem prac", "Lunch", "Chem prac", "6th sub", "PT"];
+        } else if (day === 2) {
+            subjects = ["CS", "MATH", "Break", "CHEM", "VBSE/LBA", "Eng", "Lunch", "PHY", "Chem", "MATH"];
+        } else if (day === 3) {
+            subjects = ["Math", "Chem", "Break", "Chem", "math", "phy", "Lunch", "PHY", "ENG", "PT"];
+        } else if (day === 4) {
+            subjects = ["6th sub", "MATH", "Break", "chem", "phy prac", "-", "Lunch", "LIB", "CS", "ENG"];
+        } else if (day === 5) {
+            subjects = ["Chem", "ENG", "Break", "6th sub", "6th sub", "MATH", "Lunch", "PHY", "CS", "PT"];
+        } else if (day === 6) {
+            subjects = ["ENG", "MATH", "Break", "6th sub", "PHY", "CS", "Lunch", "Chem", "CS prac", "CS prac"];
+        } else {
+            container.innerHTML = "<p>Invalid Day Order entered.</p>";
+            return;
+        }
+
+        let htmlTable = "<table><tr><th>Period</th><th>Time</th><th>Subject</th></tr>";
+        for (let i = 0; i < periods.length; i++) {
+            htmlTable += "<tr><td>" + periods[i] + "</td><td>" + times[i] + "</td><td>" + subjects[i] + "</td></tr>";
+        }
+        htmlTable += "</table>";
+
+        container.innerHTML = htmlTable;
+    }
+
+    function sendToWatch(day) {
+        fetch('/setDay?val=' + day, { method: 'POST' })
+            .then(res => console.log("Day " + day + " saved to watch memory."))
+            .catch(err => console.error("Error communicating with watch:", err));
+    }
+
+    generateTimetable(Day_order);
+    if (Day_order >= 0 && Day_order <= 6) {
+        sendToWatch(Day_order);
+    }
+</script>
+
+</body>
+</html>

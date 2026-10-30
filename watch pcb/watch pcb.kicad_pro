@@ -524,9 +524,9 @@
     "last_paths": {
       "idf": "",
       "netlist": "",
-      "plot": "",
+      "plot": "C:/Users/kkknf/OneDrive/Documents/GitHub/Pocket watch/production/",
       "specctra_dsn": "",
-      "step": "",
+      "step": "../production/watch pcb.step",
       "vrml": ""
     },
     "page_layout_descr_file": ""
