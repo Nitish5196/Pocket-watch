@@ -91,10 +91,16 @@ i'm not able to download any libraries cause its takin too long and slowing my p
 - During the school hrs i would be able to shake the watch to make it display the current time ,subject and when it starts/ends 
 - at 3pm school ends so the watch enters deep sleep mode at 4pm and wont turn on until you shake it Very aggressively and the internal , it will automatically turn on and display the webpage at 6:20am and syncs to know the current day order
 
-## so whats left?
+## so whats left? <hmm>
 - finish the code
 - make a simple webpage with html and js for now
 **Total time spent:3.5hrs** 
-## Working on the code
+## finished the code <done yay>
+okay so the code is done , i used simple html and js cause thts all ik , i might use css to make it look it later ,for now if it works it works . 
+ <img width="1325" height="715" alt="image" src="https://github.com/user-attachments/assets/0d5f79a0-a574-437b-87c3-61720325590e" />
+<img width="601" height="441" alt="image" src="https://github.com/user-attachments/assets/03252c0e-954d-4343-99f0-45b0a099bdd0" />
+<img width="745" height="536" alt="image" src="https://github.com/user-attachments/assets/e1ec9442-14d0-40d0-ae46-baaaee624e41" />
+<img width="528" height="240" alt="image" src="https://github.com/user-attachments/assets/608dc6cc-8a5a-44ab-b4d5-5d949cc097d6" />
 
- 
+
+
