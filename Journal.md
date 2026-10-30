@@ -84,13 +84,12 @@ ill work on firmware tmrw cause i spent more than 1hr to download the libraries 
 **Time Spent : 1hr**
 ## Oct 30 2026 <firmware stuff>
 i'm not able to download any libraries cause its takin too long and slowing my potato laptop so ill install them laer when im free , rn im facing another problem , Displaying the time table . my school follows Day order Timetable so i cant use "if monday -display this" cause day orders may fall on any day of the week and i get a lot of holidays so i need to connect this to my phone to skip the day order and mark it as holiday so it gets display the next working day ( this could be solved by adding a small push button but accidental push may cause it to get changed and im lazy to change my pcb and case cause I NEED TO FINISH THIS ASAP )
-###So im planning to make a simple webpage to control the day order on the watch like everyday i wake up and choose the day order on my phone before heading to school.
+### So im planning to make a simple webpage to control the day order on the watch like everyday i wake up and choose the day order on my phone before heading to school.
 ### Here is the logic for the code below :
 - At 6:20 the watch wakes up and starts the Wifi web , ill open the webpage anytime between 6:20-7:00am and select the day order or mark as holiday and save it . the wifi shuts off and the batetry goes into sleep mode to save battery .at 7am even if i didnt enter the day order or mark as holiday the watch will go into sleep mode
 - At 7:50am it displays the time and period and the period ends at 9am . at 7:55 it will show "Next: chem " and the second period ends at 9:45 am . from 9:45m to 10 am its break so at 9:55 it will display " next-Web application class 10:00am to 10:45am" like this ill upload each timetable and it will appear 5mins before the class starts and it will also vibrate 5mins before and once the class starts . 
 - During the school hrs i would be able to shake the watch to make it display the current time ,subject and when it starts/ends 
 - at 3pm school ends so the watch enters deep sleep mode at 4pm and wont turn on until you shake it Very aggressively and the internal , it will automatically turn on and display the webpage at 6:20am and syncs to know the current day order
-
 ### so whats left?
 - finish the code
 - make a simple webpage with html and js for now
