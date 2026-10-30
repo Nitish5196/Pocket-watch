@@ -3,7 +3,7 @@ title: "KN-Pocket watch"
 github: "https://github.com/Nitish5196/Pocket-watch"
 description: "hii Kn-Pocket watch is a compact pocket watch which displays the time the class you have to attend/remeinders it has a deep sleep mode and you have to shake it to wake it up. it also has a vibrating motor to alert you when its time to do smth"
 created_at: "2026-10-21"
-total_time: "TBD"
+total_time: "15.5Hrs"
 ---
 ## Oct 21 2026 - 8:20am: <journal Started adding components to cart>
 
@@ -94,7 +94,6 @@ i'm not able to download any libraries cause its takin too long and slowing my p
 ## so whats left? <hmm>
 - finish the code
 - make a simple webpage with html and js for now
-**Total time spent:3.5hrs** 
 ## finished the code <done yay>
 okay so the code is done , i used simple html and js cause thts all ik , i might use css to make it look it later ,for now if it works it works . 
  <img width="1325" height="715" alt="image" src="https://github.com/user-attachments/assets/0d5f79a0-a574-437b-87c3-61720325590e" />
@@ -102,5 +101,6 @@ okay so the code is done , i used simple html and js cause thts all ik , i might
 <img width="745" height="536" alt="image" src="https://github.com/user-attachments/assets/e1ec9442-14d0-40d0-ae46-baaaee624e41" />
 <img width="528" height="240" alt="image" src="https://github.com/user-attachments/assets/608dc6cc-8a5a-44ab-b4d5-5d949cc097d6" />
 
+**Total time spent:3.5hrs** 
 
 
