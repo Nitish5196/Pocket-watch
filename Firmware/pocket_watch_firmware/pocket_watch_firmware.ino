@@ -8,15 +8,15 @@
 #include <Adafruit_LIS3DH.h>
 #include <Adafruit_Sensor.h>
 
-const int CS = D6;       
-const int DC = D2;       
-const int RST = D3;      
-const int VIBRATE = D0;  
+const int CS = D6;
+const int DC = D2;
+const int RST = D3;
+const int VIBRATE = D0;
 
-const int SDA = D10;     
+const int SDA = D10;
 const int SCL = D8;
 
-Adafruit_GC9A01A display(CIS, DC, RST);
+Adafruit_GC9A01A display(CS, DC, RST);
 Adafruit_LIS3DH shakey = Adafruit_LIS3DH(); 
 WebServer webServer(80);
 Preferences storage;
@@ -27,10 +27,13 @@ bool screenOn = false;
 unsigned long displaywakey = 0; 
 const unsigned long DISPLAY_TIMEOUT = 10000;
 
+int currentTotalMinutes = 480; 
+unsigned long lastMinuteMillis = 0;
+
 struct ClassPeriod {
   int startMinute;
   int endMinute;
-  const char* className;
+  const char* periodName;
 };
 
 const ClassPeriod timetable[] = {
@@ -47,49 +50,36 @@ const ClassPeriod timetable[] = {
 };
 const int totalPeriods = sizeof(timetable) / sizeof(timetable[0]);
 
+const char* subjectsDay1[10] = {"PHY", "Chem", "Break", "Eng", "CSC", "Chem prac", "Lunch", "Chem prac", "6th sub", "PT"};
+const char* subjectsDay2[10] = {"CS", "MATH", "Break", "CHEM", "VBSE/LBA", "Eng", "Lunch", "PHY", "Chem", "MATH"};
+const char* subjectsDay3[10] = {"Math", "Chem", "Break", "Chem", "math", "phy", "Lunch", "PHY", "ENG", "PT"};
+const char* subjectsDay4[10] = {"6th sub", "MATH", "Break", "chem", "phy prac", "-", "Lunch", "LIB", "CS", "ENG"};
+const char* subjectsDay5[10] = {"Chem", "ENG", "Break", "6th sub", "6th sub", "MATH", "Lunch", "PHY", "CS", "PT"};
+const char* subjectsDay6[10] = {"ENG", "MATH", "Break", "6th sub", "PHY", "CS", "Lunch", "Chem", "CS prac", "CS prac"};
+
+String getSubjectName(int day, int index) {
+  if (day == 1) return subjectsDay1[index];
+  if (day == 2) return subjectsDay2[index];
+  if (day == 3) return subjectsDay3[index];
+  if (day == 4) return subjectsDay4[index];
+  if (day == 5) return subjectsDay5[index];
+  if (day == 6) return subjectsDay6[index];
+  return "";
+}
+
 const char html_page[] PROGMEM = R"rawliteral(
 <!DOCTYPE html>
 <html>
 <head>
     <title>Pocket Watch Timetable</title>
     <style>
-        body { 
-            font-family: Arial, sans-serif; 
-            background: #000000; 
-            color: #ffffff; 
-            text-align: center; 
-            padding: 15px; 
-        }
-        .card { 
-            background: #000000; 
-            border: 1px solid #ffffff; 
-            padding: 15px; 
-            border-radius: 10px; 
-            max-width: 450px; 
-            margin: auto; 
-        }
-        h2 { 
-            color: #ffffff; 
-            font-size: 18px; 
-        }
-        table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin-top: 10px; 
-            font-size: 12px; 
-        }
-        th, td { 
-            border: 1px solid #ffffff; 
-            padding: 6px; 
-            text-align: center; 
-        }
-        th { 
-            background: #ffffff; 
-            color: #000000; 
-        }
-        tr:nth-child(even) { 
-            background: #111111; 
-        }
+        body { font-family: Arial, sans-serif; background: #000000; color: #ffffff; text-align: center; padding: 15px; }
+        .card { background: #000000; border: 1px solid #ffffff; padding: 15px; border-radius: 10px; max-width: 450px; margin: auto; }
+        h2 { color: #ffffff; font-size: 18px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 12px; }
+        th, td { border: 1px solid #ffffff; padding: 6px; text-align: center; }
+        th { background: #ffffff; color: #000000; }
+        tr:nth-child(even) { background: #111111; }
     </style>
 </head>
 <body>
@@ -102,6 +92,10 @@ const char html_page[] PROGMEM = R"rawliteral(
 <script>
     let userInput = prompt("Enter Day Order (1-6) or 0 for Holiday:");
     let Day_order = Number(userInput);
+
+    let now = new Date();
+    let currentHour = now.getHours();
+    let currentMinute = now.getMinutes();
 
     function generateTimetable(day) {
         let titleElem = document.getElementById("DOD");
@@ -154,15 +148,15 @@ const char html_page[] PROGMEM = R"rawliteral(
         container.innerHTML = htmlTable;
     }
 
-    function sendToWatch(day) {
-        fetch('/setDay?val=' + day, { method: 'POST' })
-            .then(res => console.log("Day " + day + " saved to watch memory."))
-            .catch(err => console.error("Error communicating with watch:", err));
+    function sendToWatch(day, hr, min) {
+        fetch('/setDay?val=' + day + '&hr=' + hr + '&min=' + min, { method: 'POST' })
+            .then(res => console.log("Config synced."))
+            .catch(err => console.error("Error:", err));
     }
 
     generateTimetable(Day_order);
     if (Day_order >= 0 && Day_order <= 6) {
-        sendToWatch(Day_order);
+        sendToWatch(Day_order, currentHour, currentMinute);
     }
 </script>
 
@@ -176,45 +170,54 @@ void triggerVibration(int duration) {
   digitalWrite(VIBRATE, LOW);
 }
 
-void renderWatchFace(String timeText, String periodText) {
+void renderWatchFace(String topText, String mainText, String subText) {
   display.fillScreen(GC9A01A_BLACK);
-
   display.drawCircle(120, 120, 118, GC9A01A_WHITE);
 
   display.setTextSize(2);
   display.setTextColor(GC9A01A_WHITE);
-  display.setCursor(65, 50);
-  if (Current_DOD == 0) {
-    display.print("HOLIDAY");
-  } else {
-    display.print("DAY ORDER ");
-    display.print(Current_DOD);
-  }
+  display.setCursor(45, 50);
+  display.print(topText);
 
   display.setTextSize(3);
   display.setTextColor(GC9A01A_WHITE);
-  display.setCursor(65, 95);
-  display.print(timeText);
+  display.setCursor(55, 95);
+  display.print(mainText);
 
   display.setTextSize(2);
   display.setTextColor(GC9A01A_WHITE);
   display.setCursor(50, 150);
-  display.print(periodText);
+  display.print(subText);
 }
 
-String getCurrentPeriod(int hour, int minute) {
-  if (Current_DOD == 0) return "No School Today";
+void checkScheduleAlerts() {
+  if (Current_DOD == 0) return;
 
-  int currentMins = (hour * 60) + minute;
-  if (currentMins < 480) return "Before School";
-  if (currentMins >= 900) return "School Over";
+  int h = currentTotalMinutes / 60;
+  int m = currentTotalMinutes % 60;
+  String timeStr = (h < 10 ? "0" : "") + String(h) + ":" + (m < 10 ? "0" : "") + String(m);
 
   for (int i = 0; i < totalPeriods; i++) {
-    if (currentMins >= timetable[i].startMinute && currentMins < timetable[i].endMinute) {
-      return String(timetable[i].className);
+    int warningTime = timetable[i].startMinute - 5;
+    int startTime = timetable[i].startMinute;
+
+    if (currentTotalMinutes == warningTime) {
+      screenOn = true;
+      displaywakey = millis();
+      triggerVibration(120);
+      delay(100);
+      triggerVibration(120);
+      String subj = getSubjectName(Current_DOD, i);
+      renderWatchFace("5 MIN TO", subj, timeStr);
+    } 
+    else if (currentTotalMinutes == startTime) {
+      screenOn = true;
+      displaywakey = millis();
+      triggerVibration(350);
+      String subj = getSubjectName(Current_DOD, i);
+      renderWatchFace("STARTING", subj, timeStr);
     }
   }
-  return "Free Time";
 }
 
 void turnOffWiFi() {
@@ -222,16 +225,16 @@ void turnOffWiFi() {
   WiFi.softAPdisconnect(true);
   WiFi.mode(WIFI_OFF);
   wifiActive = false;
-  triggerVibration(40);
+  triggerVibration(150);
 }
 
 void setup() {
   Serial.begin(115200);
-
   pinMode(VIBRATE, OUTPUT);
 
   storage.begin("prefs", true);
   Current_DOD = storage.getInt("dayOrder", 1);
+  currentTotalMinutes = storage.getInt("savedMins", 480);
   storage.end();
 
   display.begin();
@@ -252,16 +255,24 @@ void setup() {
   webServer.on("/setDay", HTTP_POST, []() {
     if (webServer.hasArg("val")) {
       Current_DOD = webServer.arg("val").toInt();
-      storage.begin("prefs", false);
-      storage.putInt("dayOrder", Current_DOD);
-      storage.end();
     }
+    if (webServer.hasArg("hr") && webServer.hasArg("min")) {
+      int hr = webServer.arg("hr").toInt();
+      int min = webServer.arg("min").toInt();
+      currentTotalMinutes = (hr * 60) + min;
+    }
+    storage.begin("prefs", false);
+    storage.putInt("dayOrder", Current_DOD);
+    storage.putInt("savedMins", currentTotalMinutes);
+    storage.end();
+
     webServer.send(200, "text/plain", "OK");
     turnOffWiFi();
   });
   
   webServer.begin();
   wifiActive = true;
+  lastMinuteMillis = millis();
 }
 
 void loop() {
@@ -274,14 +285,39 @@ void loop() {
     }
   }
 
+  if (currentMillis - lastMinuteMillis >= 60000) {
+    lastMinuteMillis += 60000;
+    currentTotalMinutes++;
+    if (currentTotalMinutes >= 1440) {
+      currentTotalMinutes = 0;
+    }
+    checkScheduleAlerts();
+  }
+
   sensors_event_t event;
   shakey.getEvent(&event);
   if (!screenOn && event.acceleration.z > 7.5) {
     screenOn = true;
     displaywakey = currentMillis; 
-    triggerVibration(25);          
+    triggerVibration(200);          
 
-    renderWatchFace("10:15", getCurrentPeriod(10, 15));
+    int h = currentTotalMinutes / 60;
+    int m = currentTotalMinutes % 60;
+    String timeStr = (h < 10 ? "0" : "") + String(h) + ":" + (m < 10 ? "0" : "") + String(m);
+    
+    String currentStatus = "Free Time";
+    if (Current_DOD > 0) {
+      for (int i = 0; i < totalPeriods; i++) {
+        if (currentTotalMinutes >= timetable[i].startMinute && currentTotalMinutes < timetable[i].endMinute) {
+          currentStatus = getSubjectName(Current_DOD, i);
+          break;
+        }
+      }
+    } else {
+      currentStatus = "Holiday";
+    }
+
+    renderWatchFace(Current_DOD == 0 ? "HOLIDAY" : "DAY ORDER " + String(Current_DOD), currentStatus, timeStr);
   }
 
   if (screenOn && (currentMillis - displaywakey > DISPLAY_TIMEOUT)) {
