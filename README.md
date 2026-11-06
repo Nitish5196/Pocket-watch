@@ -36,4 +36,4 @@ once you enter tht , it will show the tabular form of the time table of the day 
 | Power/kill Switch | 1 | $0.2 | robu | [link](https://robu.in/product-category/slide-switches/)| 
 | Custom PCB | 1 | $11.00 | Lion Circuits | [link](https://www.lioncircuits.com/quote) |
 | 3d Case | 2 | $10 | Printing legion  | [join Hack Club!!](https://printlegion.hackclub.com/)|
-| **TOTAL** | | **$44.64** | | |
+| **TOTAL** | | **$33.3** | | |
