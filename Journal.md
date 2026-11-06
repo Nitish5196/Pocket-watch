@@ -101,5 +101,22 @@ okay so the code is done , i used simple html and js cause thts all ik , i might
 <img width="528" height="240" alt="image" src="https://github.com/user-attachments/assets/608dc6cc-8a5a-44ab-b4d5-5d949cc097d6" />
 
 **Total time spent:3.5hrs** 
+## Nov 6 <Made changes to project>
+###Changes to CAD
+![](https://fabricate.hackclub-assets.com/a1e5bfa3707aaae36e1e6f3850a10c5e4c28feec548696067c1e7f253a95ff89/image-png/image.png)
 
+![](https://fabricate.hackclub-assets.com/849b92633ee52a0e16037af47751f567e9584a6130ea77b52e6b2a6fb094658d/image-png/image.png)
+So i rezised the lipo by 0.5 so it fits in the 3d model and irl it actually fits in this 
+adding hinges to this would be hard ig since the top case is so thin , ill experiment with that once i get a 3dp
 
+![](https://fabricate.hackclub-assets.com/d7ca786e5af04142f1c4affda56da6a8a31b51b257a4739a84978aaa47a4574b/image-png/image.png)
+
+### Changes to PCB 
+I wont be using the wireless feature anymore but i dont want to remove it from the PCB incase i  decide to add it later in the future so ill remove the wireless receiver and transmittor from the cart and BOM but ill keep the footprint for it in the PCB , since it will function normally without adding the receiver and its cool to have a upgradable watch
+
+### BOM 
+![](https://fabricate.hackclub-assets.com/850ffb0bc75a1eec57ba659c66d1b51323fc44db0857c41db41f4bb91b39ef52/image-png/image.png)
+![](https://fabricate.hackclub-assets.com/fe3edb3d8d8861173ee58f847c84c94a0840060503a980e74877e88f8e31afe7/image-png/image.png)
+Now that the wireless charging components are gone , the BOM is more cost optimized ig . and it might even go lesser than this .  the $10usd for case is just an aprox estimate , ill check with someone from priniting legion and will update it soon!
+
+**Total Time Spent:0.7hrs**
