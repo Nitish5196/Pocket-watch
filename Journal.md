@@ -3,7 +3,7 @@ title: "KN-Pocket watch"
 github: "https://github.com/Nitish5196/Pocket-watch"
 description: "hii Kn-Pocket watch is a compact pocket watch which displays the time the class you have to attend/remeinders it has a deep sleep mode and you have to shake it to wake it up. it also has a vibrating motor to alert you when its time to do smth"
 created_at: "2026-10-21"
-total_time: "15.5Hrs"
+total_time: "16.2Hrs"
 ---
 ## Oct 21 2026 - 8:20am: <journal Started adding components to cart>
 
