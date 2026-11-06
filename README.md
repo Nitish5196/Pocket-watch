@@ -18,6 +18,7 @@ once you enter tht , it will show the tabular form of the time table of the day 
 ## Case (will make changes once the component's size are measured)
 <img width="427" height="322" alt="image" src="https://github.com/user-attachments/assets/d24b66c7-e9f5-4d2a-b231-ff56b7886b63" />
 <img width="494" height="381" alt="image" src="https://github.com/user-attachments/assets/c7a5df57-517c-445f-9062-b24ea7675945" />
+<img width="581" height="512" alt="image" src="https://github.com/user-attachments/assets/14f69002-d44b-4964-b412-a65a450310d7" />
 
 ## BOM
 ## Bill of Materials (BOM)
@@ -31,10 +32,8 @@ once you enter tht , it will show the tabular form of the time table of the day 
 | 1kΩ 1W Metal Film Resistor | 6 | $0.13 | Robu | [link](https://robu.in/product/1k-ohm-1w-metal-film-resistor-pack-of-40/) |
 | 1N4148 Small Signal Diode | 2 | $0.15 | Robu | [link](https://robu.in/product/1n4148-tap-vishay-1n4148-tap-small-signal-diode-single-100-v-150-ma-1-v-8-ns-2-a/) |
 | Seeed Studio XIAO ESP32C6 | 1 | $10.33 | Robu | [link](https://robu.in/product/seeed-studio-xiao-esp32c6/) |
-| HEAVENGLOW Qi Wireless Micro USB Charging Receiver Module | 1 | $5.97 | Amazon | [link](https://www.amazon.in/gp/product/B0FN4J4VNT/ref=ox_sc_act_title_1?smid=A2AL6IVND0I91F&psc=1) |
 | 3.7V 300mAh LiPo Battery | 1  | $3.8 | Amazon | [link](https://www.amazon.in/gp/product/B0DY89KG26/ref=ox_sc_saved_image_2?smid=AJ6SIZC8YQDZX&psc=1) |
-| 5V 2A Wireless Charging Transmitter| 1 | $6.63 | Robu | [Robu link](https://robu.in/product/5v-2a-large-current-wireless-charger-module-transmitter-receiver-charging-coil-module/) |
 | Power/kill Switch | 1 | $0.2 | robu | [link](https://robu.in/product-category/slide-switches/)| 
-| Custom PCB | 1 | $13.00 | Lion Circuits | [link](https://www.lioncircuits.com/quote) |
+| Custom PCB | 1 | $11.00 | Lion Circuits | [link](https://www.lioncircuits.com/quote) |
 | 3d Case | 2 | $10 | Printing legion  | [join Hack Club!!](https://printlegion.hackclub.com/)|
-| **TOTAL** | | **$55.83** | | |
+| **TOTAL** | | **$44.64** | | |
