@@ -32,8 +32,8 @@ once you enter tht , it will show the tabular form of the time table of the day 
 | 1kΩ 1W Metal Film Resistor | 6 | $0.13 | Robu | [link](https://robu.in/product/1k-ohm-1w-metal-film-resistor-pack-of-40/) |
 | 1N4148 Small Signal Diode | 2 | $0.15 | Robu | [link](https://robu.in/product/1n4148-tap-vishay-1n4148-tap-small-signal-diode-single-100-v-150-ma-1-v-8-ns-2-a/) |
 | Seeed Studio XIAO ESP32C3 | 1 | $6.4 | Robocraze | [link](https://robocraze.com/products/seeed-studio-xiao-esp32c3?variant=46039428366560) |
-| 3.7V 300mAh LiPo Battery | 1  | $3.8 | Amazon | [link](https://www.amazon.in/gp/product/B0DY89KG26/ref=ox_sc_saved_image_2?smid=AJ6SIZC8YQDZX&psc=1) |
+| 3.7V 300mAh LiPo Battery | 1  | $4 | Amazon | [link](https://www.amazon.in/gp/product/B0FGFK19DF/ref=ewc_pr_img_1?smid=A3QQB9C2QXM7ZJ&psc=1) |
 | Power/kill Switch | 1 | $0.2 | robu | [link](https://robu.in/product-category/slide-switches/)| 
-| Custom PCB | 1 | $11.00 | Lion Circuits | [link](https://www.lioncircuits.com/quote) |
+| Custom PCB | 1 | $10.5 | Lion Circuits | [link](https://www.lioncircuits.com/quote) |
 | 3d Case | 2 | $7| Printing legion  | [join Hack Club!!](https://printlegion.hackclub.com/)|
-| **TOTAL** | | **$33.3** | (incl:| |
+| **TOTAL** | | **$37.6** | (incl shipping:$1)| |
